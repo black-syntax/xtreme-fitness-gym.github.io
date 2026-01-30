@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XTREME FITNESS GYM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ================= BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#0a0a0a;
+  color:#f2f2f2;
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+}
+html{scroll-behavior:auto;}
+
+/* ================= NOISE OVERLAY ================= */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity:0.25;
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* ================= NAV ================= */
+nav{
+  position:fixed;top:0;width:100%;
+  padding:20px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:#0a0a0a;
+  border-bottom:3px solid #ff2e2e;
+  z-index:1000;
+}
+nav h1{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:4px;
+  font-size:1.8rem;
+}
+nav a{
+  color:#f2f2f2;
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:600;
+}
+nav a:hover{color:#ff2e2e;}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  padding:140px 8% 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:
+   
+
+
+    repeating-linear-gradient(
+      -45deg,
+      #0a0a0a,
+      #0a0a0a 10px,
+      #111 10px,
+      #111 20px);}
+.hero h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:5.5rem;
+  line-height:1;
+  letter-spacing:6px;
+}
+.hero h2 span{color:#ff2e2e;}
+.hero p{
+  margin:25px 0 40px;
+  max-width:600px;
+  font-size:1.05rem;
+  color:#cfcfcf;
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  padding:16px 40px;
+  border:2px solid #ff2e2e;
+  background:none;
+  color:#ff2e2e;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn.fill{background:#ff2e2e;color:#000;}
+.btn:hover{animation:brutalShake .25s linear;}
+
+/* ================= SECTION BASE ================= */
+section{
+  padding:120px 8%;
+  border-top:2px dashed #222;
+}
+section h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3.2rem;
+  letter-spacing:3px;
+  margin-bottom:30px;
+}
+section p{max-width:800px;color:#cfcfcf;}
+
+/* ================= ABOUT ================= */
+.about{background:#0f0f0f;}
+
+/* ================= TRAINER ================= */
+.trainer{
+  background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+    url("https://images.pexels.com/photos/3112004/pexels-photo-3112004.jpeg")
+    center/cover no-repeat;
+}
+.trainer-box{
+  border:3px solid #ff2e2e;
+  padding:40px;
+  max-width:700px;
+}
+.trainer-box:hover{animation:brutalShake .3s linear;}
+.trainer-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;
+  letter-spacing:3px;
+}
+.trainer-tag{
+  color:#ff2e2e;
+  margin:10px 0 20px;
+  font-weight:600;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.feature{
+  border:2px solid #222;
+  padding:35px;
+  background:#0a0a0a;
+}
+.feature:hover{
+  border-color:#ff2e2e;
+  animation:brutalShake .3s linear;
+}
+
+/* ================= MEMBERSHIP ================= */
+#plans{
+  background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61")
+    center/cover no-repeat;
+}
+.plans{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
+.plan{
+  border:3px solid #222;
+  padding:45px 30px;
+  background:#0a0a0a;
+  text-align:center;
+}
+.plan h4{
+  font-family:'Bebas Neue',sans-serif;
+  letter-spacing:2px;
+  font-size:1.6rem;
+}
+.plan p{
+  font-size:2rem;
+  margin-top:15px;
+  color:#ff2e2e;
+}
+.plan:hover{
+  border-color:#ff2e2e;
+  animation:brutalShake .25s linear;
+}
+.plan.hit{
+  background:#ff2e2e;
+  color:#000;
+}
+.plan.hit p{color:#000;}
+
+/* ================= VISIT ================= */
+.visit{
+  background:#0f0f0f;
+}
+.visit-box{
+  border:3px dashed #ff2e2e;
+  padding:50px;
+  max-width:800px;
+}
+.actions{
+  margin-top:30px;
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:30px;
+  text-align:center;
+  background:#000;
+  color:#777;
+  border-top:3px solid #ff2e2e;
+}
+
+/* ================= BRUTAL SHAKE ================= */
+@keyframes brutalShake{
+  0%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(2px,-2px)}
+  60%{transform:translate(-2px,1px)}
+  80%{transform:translate(1px,-1px)}
+  100%{transform:translate(0)}
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .hero h2{font-size:3.5rem;}
+  nav{flex-direction:column;gap:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>XTREME FITNESS</h1>
+  <div>
+    <a href="#about">ABOUT</a>
+    <a href="#trainer">TRAINER</a>
+    <a href="#plans">PLANS</a>
+    <a href="#visit">VISIT</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h2>NO EXCUSES.<br><span>ONLY WORK.</span></h2>
+  <p>
+    XTREME FITNESS GYM is not for everyone.
+    It’s for people who respect iron, discipline,
+    and consistency.
+  </p>
+  <div>
+    <button class="btn fill" onclick="location.href='#plans'">SEE PLANS</button>
+    <button class="btn" onclick="location.href='#visit'">VISIT US</button>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h3>ABOUT THE GYM</h3>
+  <p>
+    No mirrors for ego. No shortcuts. Just training
+    that builds strength and character.
+  </p>
+</section>
+
+<section id="trainer" class="trainer">
+  <h3>HEAD TRAINER</h3>
+  <div class="trainer-box">
+    <div class="trainer-name">ANKIT SINGH CHAUHAN</div>
+    <div class="trainer-tag">STRENGTH & TRANSFORMATION</div>
+    <p>
+      Programs are strict, focused, and result-driven.
+      Built for those who take training seriously.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h3>WHY XTREME?</h3>
+  <div class="features">
+    <div class="feature">HEAVY STRENGTH EQUIPMENT</div>
+    <div class="feature">RAW TRAINING FLOOR</div>
+    <div class="feature">PERSONAL ATTENTION</div>
+    <div class="feature">DISCIPLINE CULTURE</div>
+  </div>
+</section>
+
+<section id="plans">
+  <h3>MEMBERSHIP</h3>
+  <div class="plans">
+    <div class="plan"><h4>MONTHLY</h4><p>₹2000</p></div>
+    <div class="plan"><h4>3 MONTHS</h4><p>₹5000</p></div>
+    <div class="plan"><h4>6 MONTHS</h4><p>₹8000</p></div>
+    <div class="plan hit"><h4>YEARLY</h4><p>₹12000</p></div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <h3>VISIT & CONNECT</h3>
+  <div class="visit-box">
+    <p><strong>LOCATION:</strong> NRI Circle, Pratap Nagar</p>
+    <p style="margin-top:15px">
+      Walk in. Train hard. No drama.
+    </p>
+    <div class="actions">
+      <a href="tel:9782089774" class="btn fill">CALL</a>
+      <a href="https://wa.me/919782089774" class="btn">WHATSAPP</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 XTREME FITNESS GYM</footer>
+
+</body>
+</html>
